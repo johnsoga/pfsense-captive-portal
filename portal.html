@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Guest Portal</title>
+
+    <!-- Bootstrap core JS -->
+    <script src="captiveportal-jquery-3.5.0.min.js"></script>
+    <script src="captiveportal-bootstrap.min.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="captiveportal-bootstrap.min.css" rel="stylesheet">
+    <!-- Custom style -->
+    <link href="captiveportal-signin.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+    <div class="card text-center border-dark">
+        <div class="card-body">
+            <img class="mb-4" src="captiveportal-wifi-logo.svg" width="100" height="100">
+            <h5 class="card-title h3">Guest Portal Access</h5>
+
+            <form class="form-signin" method="post" action="$PORTAL_ACTION$" accept-charset="UTF-8" role="form">
+                <input name="redirurl" type="hidden" value="$PORTAL_REDIRURL$">
+                <input name="zone" type="hidden" value="$PORTAL_ZONE$">
+                <div class="checkbox mb-3">
+                    <label>
+                        <input type="checkbox" value="remember-me" onchange="document.getElementById('login').disabled = !this.checked;"> I accept the <a target="_blank" data-toggle="modal" data-target="#termsOfUseModal" rel="noopener" href="">terms of use</a>
+                    </label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" id="login" name="accept" type="submit" value="Continue" disabled autofocus>Continue</button>
+            </form>
+
+            <span> <i>Made with &hearts; by</i> <strong>Netgate</strong></span>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="termsOfUseModal" tabindex="-1" role="dialog" aria-labelledby="termsOfUseModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="termsOfUseModalLabel">Terms Of Use</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-left">
+                    <p>You are responsible for the security and appropriate use of the network resources as under your control. Using these resources for the following is strictly prohibited:</p>
+                    <ul>
+                      <li>Causing a security breach to either other network users or resources, including, but not limited to, accessing data, servers, or accounts to which you are not authorized; circumventing user authentication on any device; or sniffing network traffic.</li>
+                      <li>Causing a disruption of service to either other network users or resources, including, but not limited to, ICMP floods, packet spoofing, denial of service, heap or buffer overflows, and forged routing information.</li>
+                      <li>Introducing honeypots, honeynets, or similar technology on the network.</li>
+                      <li>Violating copyright law, including, but not limited to, illegally duplicating or transmitting copyrighted pictures, music, video, and software.</li>
+                      <li>Exporting or importing software, technical information, encryption software, or technology in violation of international or regional export control laws.</li>
+                      <li>Use of the Internet or network that violates local laws.</li>
+                      <li>Intentionally introducing malicious code, including, but not limited to, viruses, worms, Trojan horses, e-mail bombs, spyware, adware, and keyloggers.</li>
+                      <li>Port scanning or security scanning on a production network unless authorized in advance by the network operator.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
